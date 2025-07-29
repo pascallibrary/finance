@@ -1,8 +1,8 @@
 <template>
   <div :class="{ 'dark': isDarkMode }" class="min-h-screen bg-gray-100 dark:bg-gray-900 transition-colors">
-    <Navbar @toggle-theme="toggleTheme" :isDarkMode="isDarkMode" :user="user" @logout="logout" />
+    <Navbar :isDarkMode="isDarkMode" :user="user" @toggle-theme="toggleTheme" @logout="logout" />
     <div class="container mx-auto p-6">
-      <router-view :user="user" @login="login" @signup="signup" />
+      <router-view :user="user" @login="login" @signup="signup"></router-view>
     </div>
   </div>
 </template>
