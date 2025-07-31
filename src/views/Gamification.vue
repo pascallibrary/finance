@@ -1,43 +1,43 @@
 <template>
   <div class="container mx-auto p-4 sm:p-6">
-    <h2 class="text-xl sm:text-2xl font-bold mb-6 text-center text-gray-900 dark:text-white">Gamification</h2>
+    <h2 class="text-lg sm:text-2xl font-bold mb-4 sm:mb-6 text-center text-gray-900 dark:text-white">Gamification</h2>
     
     <!-- Achievements -->
-    <div class="mb-8">
-      <h3 class="text-base sm:text-lg font-semibold mb-4 text-gray-900 dark:text-white">Achievements</h3>
-      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+    <div class="mb-6 sm:mb-8">
+      <h3 class="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-gray-900 dark:text-white">Achievements</h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 sm:gap-4">
         <AchievementBadge v-for="achievement in achievements" :key="achievement.id" :achievement="achievement" />
       </div>
-      <p v-if="achievements.length === 0" class="text-center text-gray-600 dark:text-gray-400 text-xs sm:text-sm mt-4">
+      <p v-if="achievements.length === 0" class="text-center text-gray-600 dark:text-gray-400 text-xs sm:text-sm mt-3 sm:mt-4">
         No achievements unlocked yet! Play games or add transactions to earn badges.
       </p>
     </div>
 
     <!-- Budget Balancing Quiz -->
-    <div class="mb-8 bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
-      <h3 class="text-base sm:text-lg font-semibold mb-4 text-gray-900 dark:text-white">Budget Balancing Quiz</h3>
-      <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 mb-4">Answer this question to balance a budget and earn points!</p>
-      <p class="text-xs sm:text-sm text-gray-700 dark:text-gray-200 mb-2">{{ quizQuestion.question }}</p>
-      <div class="flex flex-col sm:flex-row gap-2">
-        <button v-for="option in quizQuestion.options" :key="option" @click="answerQuiz(option)" class="finance-button text-sm sm:text-base">{{ option }}</button>
+    <div class="mb-6 sm:mb-8 bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-lg shadow">
+      <h3 class="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-gray-900 dark:text-white">Budget Balancing Quiz</h3>
+      <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 mb-3 sm:mb-4">Answer this question to balance a budget and earn points!</p>
+      <p class="text-xs sm:text-sm text-gray-700 dark:text-gray-200 mb-2 sm:mb-3">{{ quizQuestion.question }}</p>
+      <div class="flex flex-col sm:flex-row gap-2 sm:gap-3">
+        <button v-for="option in quizQuestion.options" :key="option" @click="answerQuiz(option)" class="finance-button">{{ option }}</button>
       </div>
-      <p v-if="quizFeedback" class="mt-4 text-xs sm:text-sm" :class="{ 'text-green-500': quizFeedback.isCorrect, 'text-red-500': !quizFeedback.isCorrect }">
+      <p v-if="quizFeedback" class="mt-3 sm:mt-4 text-xs sm:text-sm" :class="{ 'text-green-500': quizFeedback.isCorrect, 'text-red-500': !quizFeedback.isCorrect }">
         {{ quizFeedback.message }}
       </p>
     </div>
 
     <!-- Savings Goal Challenge -->
-    <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
-      <h3 class="text-base sm:text-lg font-semibold mb-4 text-gray-900 dark:text-white">Savings Goal Challenge</h3>
-      <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 mb-4">Set a savings goal and track progress!</p>
-      <div class="flex flex-col sm:flex-row gap-4 mb-4">
-        <input v-model.number="savingsGoal" type="number" placeholder="Savings Goal ($)" class="p-3 border rounded-lg bg-gray-50 dark:bg-gray-700 dark:text-white border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base">
-        <button @click="setSavingsGoal" class="finance-button text-sm sm:text-base">Set Goal</button>
+    <div class="bg-white dark:bg-gray-800 p-4 sm:p-6 rounded-lg shadow">
+      <h3 class="text-base sm:text-lg font-semibold mb-3 sm:mb-4 text-gray-900 dark:text-white">Savings Goal Challenge</h3>
+      <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300 mb-3 sm:mb-4">Set a savings goal and track progress!</p>
+      <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-3 sm:mb-4">
+        <input v-model.number="savingsGoal" type="number" placeholder="Savings Goal ($)" class="p-2 sm:p-3 border rounded-lg bg-gray-50 dark:bg-gray-700 dark:text-white border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 text-xs sm:text-base">
+        <button @click="setSavingsGoal" class="finance-button">Set Goal</button>
       </div>
       <p v-if="savingsProgress" class="text-xs sm:text-sm text-gray-700 dark:text-gray-200">
         Progress: ${{ balance }} / ${{ savingsGoal }} ({{ (balance / savingsGoal * 100).toFixed(1) }}%)
       </p>
-      <p v-if="savingsFeedback" class="mt-2 text-xs sm:text-sm text-green-500">{{ savingsFeedback }}</p>
+      <p v-if="savingsFeedback" class="mt-2 sm:mt-3 text-xs sm:text-sm text-green-500">{{ savingsFeedback }}</p>
     </div>
   </div>
 </template>

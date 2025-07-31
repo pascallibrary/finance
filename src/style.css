@@ -4,7 +4,21 @@
 
 @layer base {
   body {
-    @apply font-['Press_Start_2P'] bg-gradient-to-br from-purple-900 via-gray-900 to-blue-900 text-white;
+    @apply font-['Inter'] bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-colors duration-300;
+  }
+  h1, h2, h3 {
+    @apply font-semibold;
   }
 }
 
+@layer components {
+  .finance-button {
+    @apply bg-blue-600 dark:bg-blue-500 text-gray-900 dark:text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg hover:bg-blue-700 dark:hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm min-h-10 w-full sm:w-auto transition-all duration-200 text-xs sm:text-base;
+  }
+  .finance-button-inactive {
+    @apply bg-gray-200 dark:bg-gray-700 text-gray-900 dark:text-white px-3 py-2 sm:px-4 sm:py-2 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 shadow-sm min-h-10 w-full sm:w-auto transition-all duration-200 text-xs sm:text-base;
+  }
+  .nav-link {
+    @apply text-blue-600 dark:text-blue-400 hover:underline px-2 py-1 sm:px-3 sm:py-2 text-xs sm:text-base transition-colors duration-200;
+  }
+}
