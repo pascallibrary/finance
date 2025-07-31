@@ -1,12 +1,12 @@
 <template>
-  <div class="max-w-md mx-auto bg-dark-bg p-6 rounded-lg shadow-neon">
-    <h2 class="text-2xl font-bold mb-6">Sign Up</h2>
+  <div class="max-w-md mx-auto bg-white dark:bg-gray-800 p-6 rounded-lg shadow">
+    <h2 class="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-6">Sign Up</h2>
     <div class="space-y-4">
-      <input v-model="email" type="email" placeholder="Email" class="w-full p-3 border rounded-lg bg-gray-800 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-blue">
-      <input v-model="password" type="password" placeholder="Password" class="w-full p-3 border rounded-lg bg-gray-800 text-white border-gray-600 focus:outline-none focus:ring-2 focus:ring-neon-blue">
-      <button @click="handleSignup" class="w-full pixel-button">Sign Up</button>
-      <p class="text-center text-gray-400">
-        Already have an account? <router-link to="/login" class="text-neon-blue hover:underline">Login</router-link>
+      <input v-model="email" type="email" placeholder="Email" class="w-full p-3 border rounded-lg bg-gray-50 dark:bg-gray-700 dark:text-white border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base">
+      <input v-model="password" type="password" placeholder="Password" class="w-full p-3 border rounded-lg bg-gray-50 dark:bg-gray-700 dark:text-white border-gray-300 dark:border-gray-600 focus:outline-none focus:ring-2 focus:ring-blue-500 text-sm sm:text-base">
+      <button @click="handleSignup" class="w-full finance-button text-sm sm:text-base">Sign Up</button>
+      <p class="text-center text-gray-600 dark:text-gray-300 text-xs sm:text-sm">
+        Already have an account? <router-link to="/login" class="text-blue-600 dark:text-blue-400 hover:underline">Login</router-link>
       </p>
     </div>
   </div>

@@ -1,9 +1,9 @@
 <template>
-  <div class="bg-yellow-100 dark:bg-yellow-900 p-4 rounded-lg shadow flex items-center gap-4">
-    <span class="text-2xl">🏆</span>
+  <div class="bg-white dark:bg-gray-800 p-4 rounded-lg shadow flex items-center gap-4">
+    <span class="text-xl sm:text-2xl">🏆</span>
     <div>
-      <h3 class="text-lg font-semibold text-yellow-800 dark:text-yellow-200">{{ achievement.name }}</h3>
-      <p class="text-sm text-yellow-600 dark:text-yellow-400">{{ achievement.description }}</p>
+      <h3 class="text-sm sm:text-base font-semibold text-gray-900 dark:text-white">{{ achievement.name }}</h3>
+      <p class="text-xs sm:text-sm text-gray-600 dark:text-gray-300">{{ achievement.description }}</p>
     </div>
   </div>
 </template>
