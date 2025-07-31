@@ -4,17 +4,17 @@ export default {
     "./index.html",
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
-  darkMode: 'class', // Enable class-based dark mode
+  darkMode: 'class',
   theme: {
     extend: {
-      animation: {
-        pulse: 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+      colors: {
+        'neon-green': '#00ff00',
+        'neon-blue': '#1e90ff',
+        'neon-blue-dark': '#1c86ee',
+        'dark-bg': '#1a1a1a',
       },
-      keyframes: {
-        pulse: {
-          '0%, 100%': { opacity: 1 },
-          '50%': { opacity: 0.5 },
-        },
+      fontFamily: {
+        'Press_Start_2P': ['"Press Start 2P"', 'sans-serif'],
       },
     },
   },
